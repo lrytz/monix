@@ -80,7 +80,7 @@ lazy val sharedSettings = warnUnusedImport ++ Seq(
     case Some((2, majorVersion)) if majorVersion >= 11 =>
       Seq(
         // Turns all warnings into errors ;-)
-        "-Xfatal-warnings",
+        // "-Xfatal-warnings",
         // Enables linter options
         "-Xlint:adapted-args", // warn if an argument list is modified to match the receiver
         "-Xlint:nullary-unit", // warn when nullary methods return Unit
@@ -232,8 +232,8 @@ lazy val unidocSettings = baseUnidocSettings ++ Seq(
     file.getCanonicalPath matches "^.*monix.execution.internals.*$"
   }),
 
-  scalacOptions in (ScalaUnidoc, unidoc) +=
-    "-Xfatal-warnings",
+  //scalacOptions in (ScalaUnidoc, unidoc) +=
+  //  "-Xfatal-warnings",
   scalacOptions in (ScalaUnidoc, unidoc) -=
     "-Ywarn-unused-import",
   scalacOptions in (ScalaUnidoc, unidoc) ++=
